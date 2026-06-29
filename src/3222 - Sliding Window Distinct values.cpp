@@ -1,6 +1,6 @@
 /*
-Problem Name: Sliding Window Sum
-Problem Link: https://cses.fi/problemset/task/3220
+Problem Name: Sliding Window Distinct Values
+Problem Link: https://cses.fi/problemset/task/3222
 Author: Taha Valiji (tmvalijib24)
 */
 #include <bits/stdc++.h>
@@ -35,5 +35,42 @@ typedef vector<pll> vpll;
 #define len(x) ll((x).size())
 const ll MOD = 1e9 + 7;
 
+template <class T>
+using oset = tree <T, null_type, less <T>, rb_tree_tag, tree_order_statistics_node_update>;
+
+template <class T>
+using MultiTree = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
+
 ll gcd(ll a, ll b) { return b == 0 ? a : gcd(b, a % b); }
 ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
+
+void solve() {
+    ll n, k; cin >> n >> k;
+    vll a(n);
+    forn (i, n) cin >> a[i];
+    map<ll, ll> mp;
+ 
+    ll l = 0;
+    forn (r, n) {
+        mp[a[r]]++;
+        if (r - l + 1 == k) {
+            cout << mp.size() << " ";
+            mp[a[l]]--;
+            if (mp[a[l]] == 0) mp.erase(a[l]);
+            l++;
+        }
+    }
+    cout << endl;
+}
+ 
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    // freopen("input.txt", "r", stdin);
+    ll tt = 1; 
+    // cin >> tt;
+    while (tt--) solve();
+    return 0;
+}

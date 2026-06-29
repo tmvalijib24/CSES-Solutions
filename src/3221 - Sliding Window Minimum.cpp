@@ -1,6 +1,6 @@
 /*
-Problem Name: Sliding Window Sum
-Problem Link: https://cses.fi/problemset/task/3220
+Problem Name: Sliding Window Minimum
+Problem Link: https://cses.fi/problemset/task/3221
 Author: Taha Valiji (tmvalijib24)
 */
 #include <bits/stdc++.h>
@@ -35,5 +35,43 @@ typedef vector<pll> vpll;
 #define len(x) ll((x).size())
 const ll MOD = 1e9 + 7;
 
+template <class T>
+using oset = tree <T, null_type, less <T>, rb_tree_tag, tree_order_statistics_node_update>;
+
+template <class T>
+using MultiTree = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
+
 ll gcd(ll a, ll b) { return b == 0 ? a : gcd(b, a % b); }
 ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
+
+void solve() {
+    ll n, k; cin >> n >> k;
+    ll x, a, b, c; cin >> x >> a >> b >> c;
+    vll p(n);
+    p[0] = x;
+    for (int i = 1; i < n; i++) p[i] = (a * p[i - 1] + b) % c;
+    deque<int> dq;
+    ll res = 0;
+ 
+    for (int i = 0; i < n; i++) {
+        if (!dq.empty() && dq.front() <= i - k) dq.pop_front(); 
+        while (!dq.empty() && p[dq.back()] >= p[i]) dq.pop_back();
+        dq.push_back(i);
+        if (i >= k - 1) {
+            res ^= p[dq.front()];
+        }
+    }
+    cout << res << endl;
+}
+ 
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    // freopen("input.txt", "r", stdin);
+    ll tt = 1; 
+    // cin >> tt;
+    while (tt--) solve();
+    return 0;
+}

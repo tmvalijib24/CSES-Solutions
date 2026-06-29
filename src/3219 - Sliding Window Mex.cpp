@@ -1,6 +1,6 @@
 /*
-Problem Name: Sliding Window Sum
-Problem Link: https://cses.fi/problemset/task/3220
+Problem Name: Sliding Window Mex
+Problem Link: https://cses.fi/problemset/task/3219
 Author: Taha Valiji (tmvalijib24)
 */
 #include <bits/stdc++.h>
@@ -35,5 +35,50 @@ typedef vector<pll> vpll;
 #define len(x) ll((x).size())
 const ll MOD = 1e9 + 7;
 
+template <class T>
+using oset = tree <T, null_type, less <T>, rb_tree_tag, tree_order_statistics_node_update>;
+
+template <class T>
+using MultiTree = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
+
 ll gcd(ll a, ll b) { return b == 0 ? a : gcd(b, a % b); }
 ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
+
+void solve() {
+    ll n, k; cin >> n >> k;
+    vll a(n);
+    forn (i, n) cin >> a[i];
+ 
+    ll l = 0;
+    vll freq(k + 1, 0);
+    set<ll> st;
+    forn (i, k + 1) st.insert(i);
+    forn (r, n) {
+        ll val = a[r];
+        if (val <= k) {
+            if (freq[val] == 0) st.erase(val);
+            freq[val]++;
+        }
+        if (r - l + 1 == k) {
+            cout << *st.begin() << " ";
+            ll p = a[l++];
+            if (p <= k) {
+                freq[p]--;
+                if (freq[p] == 0) st.insert(p);
+            }
+        }
+    }
+    cout << endl;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    // freopen("input.txt", "r", stdin);
+    ll tt = 1; 
+    // cin >> tt;
+    while (tt--) solve();
+    return 0;
+}

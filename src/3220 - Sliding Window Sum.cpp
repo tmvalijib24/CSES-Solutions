@@ -35,6 +35,13 @@ typedef vector<pll> vpll;
 #define len(x) ll((x).size())
 const ll MOD = 1e9 + 7;
 
+template <class T>
+using oset = tree <T, null_type, less <T>, rb_tree_tag, tree_order_statistics_node_update>;
+
+template <class T>
+using MultiTree = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
+
 ll gcd(ll a, ll b) { return b == 0 ? a : gcd(b, a % b); }
 ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
 
