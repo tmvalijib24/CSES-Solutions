@@ -13,6 +13,7 @@
 - [String Algorithms](#String-Algorithms)
 - [Geometry](#Geometry)
 - [Advanced Techniques](#Advanced-Techniques)
+- [Sliding Window Problems](#Sliding Window Problems)
 - [Additional Problems](#Additional-Problems)
 
 ---
@@ -260,17 +261,17 @@
 1. 2130 - Distinct Routes II
 
 ## Sliding Window Problems
-[3220 - Sliding Window Sum](src/3220%20-%20Sliding%20Window%20Sum.cpp)
-[3221 - Sliding Window Minimum](src/3221%20-%20Sliding%20Window%20Minimum.cpp)
-[3426 - Sliding Window Xor](src/3426%20-%20Sliding%20Window%20Xor.cpp)
-[3405 - Sliding Window Or]()
-[3222 - Sliding Window Distinct Values](src/3222%20-%20Sliding%20Window%20Distinct%20values.cpp)
-[3224 - Sliding Window Mode](src/3224%20-%20Sliding%20Window%20Mode.cpp)
-[3219 - Sliding Window Mex](src/3219%20-%20Sliding%20Window%20Mex.cpp)
-[1076 - Sliding Window Median](src/1076%20-%20Sliding%20Window%20Median.cpp)
-[1077 - Sliding Window Cost](src/1077%20-%20Sliding%20Window%20Cost.cpp)
-[3223 - Sliding Window Inversions]()
-[3227 - Sliding Window Advertisement]()
+1. [3220 - Sliding Window Sum](src/3220%20-%20Sliding%20Window%20Sum.cpp)
+1. [3221 - Sliding Window Minimum](src/3221%20-%20Sliding%20Window%20Minimum.cpp)
+1. [3426 - Sliding Window Xor](src/3426%20-%20Sliding%20Window%20Xor.cpp)
+1. [3405 - Sliding Window Or]()
+1. [3222 - Sliding Window Distinct Values](src/3222%20-%20Sliding%20Window%20Distinct%20values.cpp)
+1. [3224 - Sliding Window Mode](src/3224%20-%20Sliding%20Window%20Mode.cpp)
+1. [3219 - Sliding Window Mex](src/3219%20-%20Sliding%20Window%20Mex.cpp)
+1. [1076 - Sliding Window Median](src/1076%20-%20Sliding%20Window%20Median.cpp)
+1. [1077 - Sliding Window Cost](src/1077%20-%20Sliding%20Window%20Cost.cpp)
+1. [3223 - Sliding Window Inversions]()
+1. [3227 - Sliding Window Advertisement]()
 
 ## Additional Problems
 1. [1087 - Shortest Subsequence](src/1087%20-%20Shortest%20Subsequence.cpp)
