@@ -13,7 +13,7 @@
 - [String Algorithms](#String-Algorithms)
 - [Geometry](#Geometry)
 - [Advanced Techniques](#Advanced-Techniques)
-- [Sliding Window Problems](#Sliding Window Problems)
+- [Sliding Window Problems](#Sliding-Window-Problems)
 - [Additional Problems](#Additional-Problems)
 
 ---
